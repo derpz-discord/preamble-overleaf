@@ -9,7 +9,6 @@
 \usepackage{physics}
 \usepackage{tikz}
 \usepackage{tikz-cd}  % commutative diagrams
-\usepackage{color}  % Add some colour to life
 \usepackage{microtype}  % Minature font tweaks
 \usepackage{braket} % Make sets
 \usepackage{esdiff} % Write derivatives
@@ -48,6 +47,74 @@
 \newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
 \newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
 
+% Theorem environment configuration
+% colors stolen from math discord
+
+\theoremstyle{definition}
+
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{ForestGreen!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = ForestGreen,
+		backgroundcolor = ForestGreen!5,
+		}
+]{greenbox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{NavyBlue!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = NavyBlue,
+		backgroundcolor = NavyBlue!5,
+		}
+]{bluebox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{Mulberry!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = Mulberry,
+		backgroundcolor = Mulberry!5,
+		}
+]{purplebox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{RawSienna!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = RawSienna,
+		backgroundcolor = RawSienna!5,
+		}
+]{redbox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{RawSienna!70!black},
+		bodyfont = \normalfont,
+		numbered = no,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = RawSienna,
+		backgroundcolor = RawSienna!1,
+		},
+		qed = \qedsymbol
+]{proofbox}
+
 
 \newtheorem{theorem}{Theorem}
 \numberwithin{theorem}{subsection}
@@ -57,14 +124,13 @@
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{claim}[theorem]{Claim}
 
-\theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definition}
+\declaretheorem[style = greenbox, name = Definition]{definition}
+\declaretheorem[style = greenbox, name = Notation]{notation}
+\declaretheorem[style = greenbox, name = Axiom]{axiom}
 
-\theoremstyle{definition}
-\newtheorem{example}[theorem]{Example}
+\declaretheorem[style = bluebox, name = Example]{example}
 
-\theoremstyle{definition}
-\newtheorem{axiom}[theorem]{Axiom}
+% End theorem environment configuration
 
 % Formatting
 \newcommand*{\newpara}{\vspace{14pt}}
