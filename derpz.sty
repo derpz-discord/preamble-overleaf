@@ -1,0 +1,140 @@
+\ProvidesPackage{preamble}
+
+\usepackage[dvipsnames, table, xcdraw]{xcolor}
+\usepackage{amsfonts, amsthm, amsmath, amssymb}
+\usepackage{mathtools}
+\usepackage{cancel, textcomp}
+\usepackage[mathscr]{euscript}
+\usepackage[nointegrals]{wasysym}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{tikz-cd}  % commutative diagrams
+\usepackage{color}  % Add some colour to life
+\usepackage{microtype}  % Minature font tweaks
+\usepackage{braket} % Make sets
+\usepackage{esdiff} % Write derivatives
+\usepackage{xparse} % for multiple default args
+\usepackage{exercises} % for typesetting exercises
+\usepackage{enumitem}
+\usepackage{bm}
+\usepackage{multicol, titletoc, bookmark, parskip}
+
+\usepackage{thmtools}
+\usepackage[framemethod = TikZ]{mdframed}
+\mdfsetup{skipabove = 1em, skipbelow = 0em}
+
+\setlength{\parindent}{0pt} % fix indentation of exercises
+
+\usepackage{hyperref}
+\usepackage[noabbrev,capitalise,nameinlink]{cleveref}
+\hypersetup{colorlinks={true},linkcolor={blue},citecolor=green}
+
+
+% Common shortcuts
+\def\mbb#1{\mathbb{#1}}
+\def\mfk#1{\mathfrak{#1}}
+\def\mc#1{\mathcal{#1}}
+
+\def\bN{\mbb{N}}
+\def\bC{\mbb{C}}
+\def\bR{\mbb{R}}
+\def\bQ{\mbb{Q}}
+\def\bZ{\mbb{Z}}
+
+% Sometimes helpful macros
+\newcommand{\func}[3]{#1\colon#2\to#3}
+
+\newcommand{\vfunc}[5]{\func{#1}{#2}{#3},\quad#4\longmapsto#5}
+\newcommand{\floor}[1]{\left\lfloor#1\right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil#1\right\rceil}
+
+
+\newtheorem{theorem}{Theorem}
+\numberwithin{theorem}{subsection}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{definition}
+\newtheorem{example}[theorem]{Example}
+
+\theoremstyle{definition}
+\newtheorem{axiom}[theorem]{Axiom}
+
+% Formatting
+\newcommand*{\newpara}{\vspace{14pt}}
+
+% Fractions
+\def\f#1/#2.{\frac{#1}{#2}}
+
+% Common things
+\newcommand{\inv}{^{-1}}
+\renewcommand{\abs}[1]{\lvert #1 \rvert}
+\newcommand{\paren}[1]{\ensuremath{\left(#1\right)}}
+
+% Colorize things
+\newcommand{\tblue}[1]{\textcolor{blue}{#1}}
+\newcommand{\tred}[1]{\textcolor{red}{#1}}
+\newcommand{\tgreen}[1]{\textcolor{green}{#1}}
+\newcommand{\tcyan}[1]{\textcolor{black}{#1}}
+
+% Overbrace and underbrace
+\newcommand{\ob}[2]{\ensuremath{\overbrace{#1}^{\text{#2}}}}
+\newcommand{\ub}[2]{\ensuremath{\underbrace{#1}_{\text{#2}}}}
+
+% Piecewise
+\newcommand{\pw}[2]{\ensuremath{#1 = \begin{cases}#2\end{cases}}}
+\newcommand{\piece}[2]{\ensuremath{#1 & \text{if} \, #2 \\}}
+
+% Set theory things
+\renewcommand{\emptyset}{\varnothing}
+\newcommand*{\medcap}{\mathbin{\scalebox{1.5}{\ensuremath{\cap}}}}
+\newcommand*{\medcup}{\mathbin{\scalebox{1.5}{\ensuremath{\cup}}}}
+% end set theory things
+% Proof symbols 
+\newcommand{\forwarddir}{\ensuremath{(\Rightarrow) \quad}}
+\newcommand{\conversedir}{\ensuremath{(\Leftarrow) \quad}}
+% End proof symbols
+% Analysis stuff
+\newcommand{\eps}{\varepsilon}
+\newcommand{\halfeps}{\frac{\eps}{2}}
+\newcommand{\limtoinf}[2]{
+    \ensuremath{
+        \lim_{#1 \to \infty}{#2}
+    }
+}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+% End analysis stuff
+% Algebra macros
+\def\zgroup#1.{
+    \ensuremath{
+        \bZ_{#1} = \set{0, 1, \dotsc, \the\numexpr#1-1}
+    }
+}
+
+\newcommand{\gen}[1]{
+    \ensuremath{
+        \langle #1 \rangle
+    }
+}
+% End Algebra macros
+% Topology macros
+% Usage: \ball{radius}{metric}{point}
+\newcommand{\ball}[3]{\ensuremath{
+B_{#1}^{(#2)} (#3)
+}}
+\newcommand{\cball}[3]{\ensuremath{
+B_{#1}^{(#2)} [#3]
+}}
+\newcommand{\metrictop}[1]{\ensuremath{\mc T_{#1}}}
+\newcommand{\metricspace}[2]{Let \ensuremath{(#1, #2)} be a metric space}
+\newcommand*{\Interior}[1]{\ensuremath{\textnormal{Int} \, #1}}
+\newcommand*{\Exterior}[1]{\ensuremath{\textnormal{Ext} \, #1}}
+\newcommand*{\Boundary}[1]{\ensuremath{\partial \, #1}}
+\newcommand*{\nbhd}[1]{\ensuremath{V\paren{#1}}}
+% End topology macros
