@@ -1,0 +1,90 @@
+\ProvidesPackage{thmenvs}
+
+\usepackage{thmtools}
+\usepackage{tikz}
+\usepackage[skins]{tcolorbox}
+\usepackage[framemethod = TikZ]{mdframed}
+\mdfsetup{skipabove = 1em, skipbelow = 0em}
+
+% Theorem environment configuration
+% colors stolen from math discord
+
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{ForestGreen!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = ForestGreen,
+		backgroundcolor = ForestGreen!5,
+		}
+]{greenbox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{NavyBlue!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = NavyBlue,
+		backgroundcolor = NavyBlue!5,
+		}
+]{bluebox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{Mulberry!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = Mulberry,
+		backgroundcolor = Mulberry!5,
+		}
+]{purplebox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{RawSienna!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = RawSienna,
+		backgroundcolor = RawSienna!5,
+		}
+]{redbox}
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{RawSienna!70!black},
+		bodyfont = \normalfont,
+		numbered = no,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = RawSienna,
+		backgroundcolor = RawSienna!1,
+		},
+		qed = \qedsymbol
+]{proofbox}
+
+\declaretheorem[style = proofbox, name = Trivial Proof]{trivialproof}
+
+\declaretheorem[name = Theorem, numberwithin=subsection]{theorem}
+\declaretheorem[name = Theorem, numberwithin=section, style=purplebox]{importantthm}
+\declaretheorem[name = Proposition, style=plain, numberwithin=subsection]{proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{claim}[theorem]{Claim}
+
+\declaretheorem[style = greenbox, name = Definition, numberwithin=section]{definition}
+\declaretheorem[style = greenbox, name = Notation, numberwithin=section]{notation}
+\declaretheorem[style = greenbox, name = Axiom, numberwithin=section]{axiom}
+
+\declaretheorem[style = bluebox, name = Example, numberwithin=subsection]{example}
+\declaretheorem[style = bluebox, name = Recall, numbered=no]{recall}
