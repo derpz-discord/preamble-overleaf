@@ -1,0 +1,59 @@
+\ProvidesPackage{math-macros}
+
+\usepackage{xargs}
+\usepackage{xparse}
+
+\RequirePackage{general-math-macros}
+
+% Analysis stuff
+\newcommand{\eps}{\varepsilon}
+\newcommand{\halfeps}{\frac{\eps}{2}}
+\newcommand{\limtoinf}[2]{
+    \ensuremath{
+        \lim_{#1 \to \infty}{#2}
+    }
+}
+% Usage: \seq{x}{n} -> (x_n)
+\newcommand*{\seq}[2]{\ensuremath{\paren{#1_{#2}}}}
+\newcommand*{\seqlim}[2]{\ensuremath{\limtoinf{#2}{\seq{#1}{#2}}}}
+\NewDocumentCommand{\app}{O{x} O{\infty}}{\xrightarrow{#1\to#2}}
+% End analysis stuff
+
+% Algebra macros
+\def\zgroup#1.{
+    \ensuremath{
+        \bZ_{#1} = \set{0, 1, \dotsc, \the\numexpr#1-1}
+    }
+}
+
+\newcommand{\gen}[1]{
+    \ensuremath{
+        \langle #1 \rangle
+    }
+}
+% End Algebra macros
+
+
+% Topology macros
+% Usage: \ball{radius}{metric}{point}
+% \newcommand{\ball}[3]{\ensuremath{
+% B_{#1}^{(#2)} \paren{#3}
+% }}
+\NewDocumentCommand{\ball}{O{r} o m}{
+    \IfNoValueTF{#2}{B_{#1} \paren{#3}}{B_{#1}^{(#2)} \paren{#3}}
+}
+\newcommand{\cball}[3]{\ensuremath{
+B_{#1}^{(#2)} \paren*{#3}
+}}
+\newcommand{\metrictop}[1]{\ensuremath{\mc T_{#1}}}
+% \newcommand{\metricspace}[2]{Let \ensuremath{(#1, #2)} be a metric space}
+\newcommandx{\metricspace}[2][1=X, 2=d]{Let \ensuremath{(#1, #2)} be a metric space.}
+\newcommand*{\Interior}[1]{\ensuremath{\textnormal{Int} \, #1}}
+\newcommand*{\Exterior}[1]{\ensuremath{\textnormal{Ext} \, #1}}
+\newcommand*{\Boundary}[1]{\ensuremath{\partial \, #1}}
+\newcommand*{\nbhd}[1]{\ensuremath{U_{#1}}}
+% \newcommandx{\topospace}[2][1=X, 2=T]{Let \ensuremath{(#1, \mathcal{#2})} be a topological space.}
+\NewDocumentCommand{\topospace}{O{X} o}{%
+Let \ensuremath{\paren{#1, \IfNoValueTF{#2}{\mc T_{#1}}{#2}}} be a topological space. %
+}%
+% End topology macros
