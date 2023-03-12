@@ -76,17 +76,16 @@
 
 \declaretheorem[style = proofbox, name = Trivial Proof]{trivialproof}
 
-\declaretheorem[name = Theorem, numberwithin=subsection]{theorem}
-\declaretheorem[name = Theorem, numberwithin=section, style=purplebox]{importantthm}
-\declaretheorem[name = Proposition, style=plain, numberwithin=subsection]{proposition}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}{Corollary}[theorem]
-\newtheorem{conjecture}[theorem]{Conjecture}
-\newtheorem{claim}[theorem]{Claim}
+\declaretheorem[name = Theorem, numberwithin=section, style=redbox]{theorem}
+\declaretheorem[name = Proposition, numberlike=theorem, style=purplebox]{proposition}
+\declaretheorem[name = Lemma, numberlike=theorem, style=purplebox]{lemma}
+\declaretheorem[name = Corollary, numberlike=theorem, style=bluebox]{corollary}
+\declaretheorem[name = Conjecture, numberlike=theorem, style=bluebox]{conjecture}
+\declaretheorem[name = Claim, numberlike=theorem, style=bluebox]{claim}
 
-\declaretheorem[style = greenbox, name = Definition, numberwithin=section]{definition}
-\declaretheorem[style = greenbox, name = Notation, numberwithin=section]{notation}
-\declaretheorem[style = greenbox, name = Axiom, numberwithin=section]{axiom}
+\declaretheorem[name = Definition, numberlike=theorem, style=greenbox]{definition}
+\declaretheorem[name = Notation, numberlike=theorem, style=greenbox]{notation}
+\declaretheorem[name = Axiom, numberlike=theorem, style=greenbox]{axiom}
 
-\declaretheorem[style = bluebox, name = Example, numberwithin=subsection]{example}
-\declaretheorem[style = bluebox, name = Recall, numbered=no]{recall}
+\declaretheorem[name = Example, numberlike=theorem, style=bluebox]{example}
+\declaretheorem[name = Recall, numbered=no, style=bluebox]{recall}
