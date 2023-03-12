@@ -47,6 +47,7 @@
 		backgroundcolor = Mulberry!5,
 		}
 ]{purplebox}
+
 \declaretheoremstyle[
 		headfont = \bfseries\sffamily\color{RawSienna!70!black},
 		bodyfont = \normalfont,
@@ -59,6 +60,33 @@
 		backgroundcolor = RawSienna!5,
 		}
 ]{redbox}
+
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{YellowOrange!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = YellowOrange,
+		backgroundcolor = YellowOrange!5,
+		}
+]{orangebox}
+
+\declaretheoremstyle[
+		headfont = \bfseries\sffamily\color{RubineRed!70!black},
+		bodyfont = \normalfont,
+		mdframed = {
+		linewidth = 2pt,
+		rightline = false,
+		topline = false,
+		bottomline = false,
+		linecolor = RubineRed,
+		backgroundcolor = RubineRed!5,
+		}
+]{rubineredbox}
+
 \declaretheoremstyle[
 		headfont = \bfseries\sffamily\color{RawSienna!70!black},
 		bodyfont = \normalfont,
@@ -73,6 +101,15 @@
 		},
 		qed = \qedsymbol
 ]{proofbox}
+
+\declaretheorem[style=redbox, name=Red Box]{redboxdemo}
+\declaretheorem[style=greenbox, name=Green Box]{greenboxdemo}
+\declaretheorem[style=bluebox, name=Blue Box]{blueboxdemo}
+\declaretheorem[style=purplebox, name=Purple Box]{purpleboxdemo}
+\declaretheorem[style=orangebox, name=Orange Box]{orangeboxdemo}
+\declaretheorem[style=rubineredbox, name=Rubine Red Box]{rubineredboxdemo}
+
+\declaretheorem[style=proofbox, name=Proof Box]{proofboxdemo}
 
 \declaretheorem[style = proofbox, name = Trivial Proof]{trivialproof}
 
