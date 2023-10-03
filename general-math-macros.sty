@@ -27,26 +27,22 @@
 
 \newcommand{\inv}{^{-1}}
 % \newcommand{\paren}[1]{\ensuremath{\left(#1\right)}}
+\RenewDocumentCommand\abs{s m}{
+    \IfBooleanTF#1
+        {\ensuremath{\left\lvert#2\right\rvert}}
+        {\ensuremath{\lvert#2\rvert}}
+}
+\RenewDocumentCommand\norm{s m}{
+    \IfBooleanTF#1
+        {\ensuremath{\left\lVert#2\right\rVert}}
+        {\ensuremath{\lVert#2\rVert}}
+}
+
 \NewDocumentCommand\paren{s m}{
     \IfBooleanTF#1
         {\ensuremath{\left[#2\right]}}
         {\ensuremath{\left(#2\right)}}
 }
-
-\DeclarePairedDelimiter\abs{\lvert}{\rvert}
-\DeclarePairedDelimiter\norm{\lVert}{\rVert}
-
-% Swap the definition of \abs* and \norm*, so that \abs
-% and \norm resizes the size of the brackets, and the 
-% starred version does not.
-\makeatletter
-\let\oldabs\abs
-\def\abs{\@ifstar{\oldabs}{\oldabs*}}
-
-\let\oldnorm\norm
-\def\norm{\@ifstar{\oldnorm}{\oldnorm*}}
-\makeatother
-
 
 
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
