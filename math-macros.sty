@@ -26,7 +26,6 @@
 
 
 \newcommand{\inv}{^{-1}}
-% \newcommand{\paren}[1]{\ensuremath{\left(#1\right)}}
 \RenewDocumentCommand\abs{s m}{
     \IfBooleanTF#1
         {\ensuremath{\left\lvert#2\right\rvert}}
@@ -37,20 +36,26 @@
         {\ensuremath{\left\lVert#2\right\rVert}}
         {\ensuremath{\lVert#2\rVert}}
 }
-
+% \paren* does square brackets, \paren does regular brackets
 \NewDocumentCommand\paren{s m}{
     \IfBooleanTF#1
         {\ensuremath{\left[#2\right]}}
         {\ensuremath{\left(#2\right)}}
 }
+% \bigl parentheses
+\NewDocumentCommand\Paren{s m}{
+    \IfBooleanTF#1
+        {\ensuremath{\bigl[#2\bigr]}}
+        {\ensuremath{\bigl(#2\bigr)}}
+}
 
-
+% Text colours
 \newcommand{\tblue}[1]{\textcolor{blue}{#1}}
 \newcommand{\tred}[1]{\textcolor{red}{#1}}
 \newcommand{\tgreen}[1]{\textcolor{green}{#1}}
 \newcommand{\tcyan}[1]{\textcolor{black}{#1}}
 
-
+% Overbrace, Underbrace
 \newcommand{\ob}[2]{\ensuremath{\overbrace{#1}^{\text{#2}}}}
 \newcommand{\ub}[2]{\ensuremath{\underbrace{#1}_{\text{#2}}}}
 
