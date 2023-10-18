@@ -11,6 +11,8 @@
 % Theorem environment configuration
 % colors stolen from math discord
 
+\newcommand{\sslash}{\mathbin{/\mkern-6mu/}}
+
 \declaretheoremstyle[
 		headfont = \bfseries\sffamily\color{ForestGreen!70!black},
 		bodyfont = \normalfont,
@@ -114,15 +116,17 @@
 \declaretheorem[style = proofbox, name = Trivial Proof]{trivialproof}
 
 \declaretheorem[name = Theorem, numberwithin=section, style=redbox]{theorem}
-\declaretheorem[name = Proposition, numberlike=theorem, style=purplebox]{proposition}
-\declaretheorem[name = Lemma, numberlike=theorem, style=purplebox]{lemma}
-\declaretheorem[name = Corollary, numberlike=theorem, style=bluebox]{corollary}
-\declaretheorem[name = Conjecture, numberlike=theorem, style=bluebox]{conjecture}
-\declaretheorem[name = Claim, numberlike=theorem, style=bluebox]{claim}
+\declaretheorem[name = Proposition, numberlike=theorem]{proposition}
+\declaretheorem[name = Lemma, numberlike=theorem]{lemma}
+\declaretheorem[name = Corollary, numberlike=theorem]{corollary}
+\declaretheorem[name = Conjecture, numberlike=theorem]{conjecture}
+\declaretheorem[name = Claim, numberlike=theorem]{claim}
 
 \declaretheorem[name = Definition, numberlike=theorem, style=greenbox]{definition}
 \declaretheorem[name = Notation, numberlike=theorem, style=greenbox]{notation}
 \declaretheorem[name = Axiom, numberlike=theorem, style=greenbox]{axiom}
 
-\declaretheorem[name = Example, numberlike=theorem, style=bluebox]{example}
+\declaretheorem[name = Example, numberlike=theorem, style=definition, qed=$\sslash$]{example}
 \declaretheorem[name = Recall, numbered=no, style=bluebox]{recall}
+
+\declaretheorem[name = Exercise, numberlike=theorem, style=definition}{exercise}
